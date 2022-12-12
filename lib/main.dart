@@ -2,12 +2,14 @@ import 'package:app_structure/provider/home_provider.dart';
 import 'package:app_structure/ui/splash/splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'di_container.dart' as di;
 import 'package:sizer/sizer.dart';
 
 
-void main() async {
+Future main() async {
+  await dotenv.load(fileName: "assets/env/.env.dev");
   WidgetsFlutterBinding.ensureInitialized();
 
   await di.init();
